@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const AWS = require('aws-sdk');
 const bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload')
 
 const {
     S3Client,
@@ -19,8 +18,6 @@ const s3Client = new S3Client({
 
 // Middleware to parse JSON requests
 router.use(bodyParser.json());
-
-router.use(fileUpload());
 
 // Webhook endpoint
 router.post('/api/web3hook', async (req, res) => {
