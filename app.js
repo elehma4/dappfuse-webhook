@@ -10,8 +10,8 @@ app.use(express.static('public'))
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
-// routes
-app.use(require('./routes/events.js'))
+// API
+app.use(require('./routes/api/events.js'))
 
 app.listen(port, () => {
     console.log(`listening on port ${port}`);
