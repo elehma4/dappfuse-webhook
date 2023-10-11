@@ -3,7 +3,7 @@ const app = express();
 require('dotenv').config();
 
 
-const port = 3017;
+const port = process.env.PORT || 3017;
 
 app.use(express.static('public'))
 
