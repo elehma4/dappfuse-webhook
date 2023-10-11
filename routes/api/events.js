@@ -20,7 +20,7 @@ const s3Client = new S3Client({
 router.use(bodyParser.json());
 
 // Webhook endpoint
-router.post('/api/web3hook', async (req, res) => {
+router.post(process.env.WEBHOOK, async (req, res) => {
     console.log('Received Webhook Payload:', req.body);
     AWS.config.logger = console;
 
